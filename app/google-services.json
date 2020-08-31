@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "322504479031",
+    "firebase_url": "https://bhattavyapar1.firebaseio.com",
+    "project_id": "bhattavyapar1",
+    "storage_bucket": "bhattavyapar1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322504479031:android:2b8cde1b1da30c44094ab2",
+        "android_client_info": {
+          "package_name": "com.pawan.bhattavyapar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322504479031-1gmrl5g85idfgfnn8mslqq8jnsmdr16s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3_LgBCaEPE4pwG7ZC3SZAXr1YuIsiq5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322504479031-1gmrl5g85idfgfnn8mslqq8jnsmdr16s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
