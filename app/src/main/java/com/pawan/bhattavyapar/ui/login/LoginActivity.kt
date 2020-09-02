@@ -15,7 +15,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.pawan.bhattavyapar.R
+import com.pawan.bhattavyapar.ui.mainpage.MainActivity
 import com.pawan.bhattavyapar.ui.signup.SignUpActivity
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,6 +38,11 @@ class LoginActivity : AppCompatActivity() {
 
         btnSignup.setOnClickListener(View.OnClickListener {
             val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+            startActivity(intent)
+        })
+
+        btnLoggedIn.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(intent)
         })
 

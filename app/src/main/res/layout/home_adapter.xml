@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="1dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/lyConMain"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TableRow
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            android:layout_width="match_parent">
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="0dp" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"/>
+            <TextView
+                android:id="@+id/tvRs"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:text="5000"/>
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:textColor="@color/Green"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Given"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="0dp" />
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="1000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="0dp" />
+            <TextView
+                android:id="@+id/tvDateTime"
+                android:layout_width="wrap_content"
+                android:textColor="@color/red"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="22-12-2020"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="0dp" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"/>
+            <TextView
+
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:text="balance"/>
+        </TableRow>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
