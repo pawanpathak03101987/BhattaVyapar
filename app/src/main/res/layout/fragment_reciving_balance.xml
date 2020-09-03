@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.RecivingBalanceFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+   <LinearLayout android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_margin="10dp"
+       android:orientation="vertical">
+       <TableRow android:layout_height="wrap_content"
+           android:layout_marginTop="5dp"
+           android:background="@drawable/editext_pressed"
+           android:minHeight="55dp"
+           android:layout_width="match_parent">
+           <TextView
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:text="Rs"
+               android:paddingLeft="10dp"
+               style="@style/NewSimpleTextWrap"
+               android:textSize="24dp"
+               android:textColor="@color/Green"
+               android:textStyle="bold"
+               />
+           <EditText
+               android:id="@+id/edit_Amount"
+               android:layout_marginLeft="15dp"
+               android:layout_width="match_parent"
+               android:padding="5dp"
+               android:textSize="20dp"
+               android:inputType="number"
+               android:hint="Amount"
+               android:textColorHint="@color/gray"
+               android:minHeight="55dp"
+               android:layout_height="wrap_content"/>
+       </TableRow>
+       <TableRow android:layout_width="match_parent"
+           android:layout_marginTop="20dp"
+           android:layout_height="wrap_content">
+           <RadioGroup
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_width="match_parent">
+               <RadioButton
+                   android:id="@+id/radioOnline"
+                   android:layout_width="0dp"
+                   android:text="Online"
+                   android:textSize="16dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"/>
+               <RadioButton
+                   android:id="@+id/radioCash"
+                   android:layout_width="0dp"
+                   android:text="Cash"
+                   android:textSize="16dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"/><RadioButton
+                   android:id="@+id/radioOther"
+                   android:layout_width="0dp"
+                   android:text="Other"
+                  android:textSize="16dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"/>
+           </RadioGroup>
+
+       </TableRow>
+       <TextView
+           android:text="Discretion"
+           style="@style/NewSimpleTextWrap"
+           android:layout_marginTop="10dp"
+
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+       <TableRow android:layout_height="wrap_content"
+           android:layout_marginTop="5dp"
+           android:layout_width="match_parent">
+           <EditText
+               android:id="@+id/edit_MobileNumber"
+               style="@style/EditTextStyle"
+                android:hint="Discretion"
+               android:layout_width="match_parent"
+               android:layout_height="45dp"/>
+       </TableRow>
+
+       <TextView
+           android:text="Date"
+           style="@style/NewSimpleTextWrap"
+           android:layout_marginTop="10dp"
+
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+       <TableRow android:layout_height="wrap_content"
+           android:layout_marginTop="5dp"
+           android:layout_width="match_parent">
+           <TextView
+               android:id="@+id/tvDate"
+               style="@style/EditTextStyle"
+                android:hint="dd/mm/yyyy"
+               android:layout_width="match_parent"
+               android:layout_height="45dp"/>
+       </TableRow>
+       <TableRow
+           android:layout_height="wrap_content"
+           android:layout_margin="20dp"
+           android:layout_width="match_parent">
+           <TextView android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"/>
+           <Button
+               android:id="@+id/btnSave"
+               android:layout_height="wrap_content"
+               android:text="Save"
+
+               android:background="@drawable/buttonshape"
+               android:backgroundTint="@color/colorPrimaryDark"
+               android:padding="10dp"
+               android:textColor="@color/white"
+               android:layout_width="wrap_content"/>
+           <TextView android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"/>
+       </TableRow>
+   </LinearLayout>
+
+</FrameLayout>

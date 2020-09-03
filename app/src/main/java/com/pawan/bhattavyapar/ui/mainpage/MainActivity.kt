@@ -16,7 +16,9 @@ import com.pawan.bhattavyapar.adapter.ClickListener
 import com.pawan.bhattavyapar.adapter.NavigationRVAdapter
 import com.pawan.bhattavyapar.adapter.RecyclerTouchListener
 import com.pawan.bhattavyapar.data.model.NavigationItemModel
+import com.pawan.bhattavyapar.ui.fragments.AddNewCustomerFragment
 import com.pawan.bhattavyapar.ui.fragments.HomeFragment
+import com.pawan.bhattavyapar.ui.fragments.RecivingBalanceFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -54,8 +56,8 @@ class MainActivity : AppCompatActivity() {
                     1 -> {
                         // # Music Fragment
                         val bundle = Bundle()
-                        bundle.putString("fragmentName", "Music Fragment")
-                        val musicFragment = HomeFragment()
+                        bundle.putString("fragmentName", "Add Customer")
+                        val musicFragment = AddNewCustomerFragment()
                         musicFragment.arguments = bundle
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.activity_main_content_id, musicFragment).commit()
@@ -63,8 +65,8 @@ class MainActivity : AppCompatActivity() {
                     2 -> {
                         // # Movies Fragment
                         val bundle = Bundle()
-                        bundle.putString("fragmentName", "Movies Fragment")
-                        val moviesFragment = HomeFragment()
+                        bundle.putString("fragmentName", "Receive Balance")
+                        val moviesFragment = RecivingBalanceFragment()
                         moviesFragment.arguments = bundle
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.activity_main_content_id, moviesFragment).commit()
