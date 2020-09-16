@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
@@ -14,10 +15,13 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.pawan.bhattavyapar.MyApplication
 import com.pawan.bhattavyapar.R
 import com.pawan.bhattavyapar.ui.mainpage.MainActivity
 import com.pawan.bhattavyapar.ui.signup.SignUpActivity
+import com.pawan.bhattavyapar.utils.Others
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -42,8 +46,26 @@ class LoginActivity : AppCompatActivity() {
         })
 
         btnLoggedIn.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            startActivity(intent)
+            MyApplication.getFireStoreObj().collection("MstUsers").whereEqualTo("PrimaryMobileNo", username.text.toString() ).whereEqualTo( "Password", password.text.toString())
+                .get()
+                .addOnSuccessListener {  result ->
+
+                    if (result.size()>0) {
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        startActivity(intent)
+                    }else{
+                        Toast.makeText(this,"User not exist",Toast.LENGTH_LONG).show()
+                    }
+
+
+
+
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("User", "Error getting documents.", exception)
+                    //  Log.e("User", "${document.id} => ${document.data}")
+                }
+
         })
 
         loginViewModel = ViewModelProviders.of(this, LoginViewModelFactory())
@@ -110,7 +132,10 @@ class LoginActivity : AppCompatActivity() {
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }
         }
+
     }
+
+
 
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)

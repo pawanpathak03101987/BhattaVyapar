@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -11,6 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pawan.bhattavyapar.MyApplication
 import com.pawan.bhattavyapar.R
 import com.pawan.bhattavyapar.adapter.ClickListener
 import com.pawan.bhattavyapar.adapter.NavigationRVAdapter
@@ -27,12 +29,31 @@ class MainActivity : AppCompatActivity() {
 
     private var items = arrayListOf(
         NavigationItemModel(android.R.drawable.btn_star_big_on, "Business Profile"),
-        NavigationItemModel(android.R.drawable.btn_star_big_on, "Security"),
-        NavigationItemModel(android.R.drawable.btn_star_big_on, "Currency"),
+        NavigationItemModel(android.R.drawable.btn_star_big_on, "Add Customer"),
+        NavigationItemModel(android.R.drawable.btn_star_big_on, "Receive Balance"),
         NavigationItemModel(android.R.drawable.btn_star_big_on, "Rate"),
 
 
     )
+
+    fun SaveData()
+    {
+
+
+        val user = hashMapOf(
+            "Country" to "Rasia",
+            "CountryCode" to "Ch",
+            "CountryID" to "20",
+            "CreatedOn" to "2020-09-01T00:00:00",
+            "IsActive" to true,
+            "UploadedBy" to 2,
+            "CreatedBy" to 2
+        )
+
+// Add a new document with a generated ID
+        MyApplication.getFireStoreObj().collection("MstCountry").document("335HHVa1xTyyrNZaer2D")
+            .set(user)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set the toolbar
         setSupportActionBar(toolbar)
-
+        SaveData()
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
                 when (position) {
